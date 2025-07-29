@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans;
+}
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading;
+}
+
+.falling-star {
+  position: absolute;
+  width: 2px;
+  height: 32px;
+  background: linear-gradient(180deg, #fff 0%, #60a5fa 60%, transparent 100%);
+  border-radius: 9999px;
+  opacity: 0.85;
+  box-shadow: 0 0 8px 2px #60a5fa99;
+  animation-name: fall-star;
+  animation-timing-function: cubic-bezier(0.4,0,0.2,1);
+  animation-iteration-count: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .falling-star {
+    background: linear-gradient(180deg, #fff 0%, #3b82f6 60%, transparent 100%);
+    box-shadow: 0 0 12px 2px #3b82f6cc;
+  }
+}
+
+@keyframes fall-star {
+  0% {
+    opacity: 0.7;
+    transform: translateY(-40px) scaleX(1) scaleY(1) rotate(-15deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(60vh) scaleX(1.2) scaleY(1.1) rotate(-15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(70vh) scaleX(1.3) scaleY(1.2) rotate(-15deg);
+  }
+}
+
+.falling-star-single {
+  position: absolute;
+  width: 2.5px;
+  height: 160px;
+  background: linear-gradient(180deg, #fff 10%, #60a5fa 60%, transparent 100%);
+  border-radius: 9999px;
+  opacity: 0.95;
+  box-shadow: 0 0 32px 8px #60a5fa99, 0 0 8px 2px #fff;
+  animation-name: meteor-fall-single;
+  animation-timing-function: cubic-bezier(0.4,0,0.2,1);
+  animation-iteration-count: 1;
+  z-index: 1;
+  filter: blur(0.5px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .falling-star-single {
+    background: linear-gradient(180deg, #fff 10%, #3b82f6 60%, transparent 100%);
+    box-shadow: 0 0 48px 8px #3b82f6cc, 0 0 8px 2px #fff;
+  }
+}
+
+@keyframes meteor-fall-single {
+  0% {
+    opacity: 0.8;
+    transform: translate(-10vw, -10vh) rotate(-35deg) scaleX(1) scaleY(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(40vw, 60vh) rotate(-35deg) scaleX(1.1) scaleY(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(60vw, 90vh) rotate(-35deg) scaleX(1.2) scaleY(1.2);
+  }
+}
