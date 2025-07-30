@@ -59,8 +59,8 @@ const Skills = React.memo(() => {
       id="skills"
       className={`py-20 relative transition-colors duration-700 ${
         isDark
-          // ? "bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white"
-          // : "bg-gradient-to-b from-blue-100 via-white to-blue-50 text-gray-900"
+          ? "bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white"
+          : "bg-gradient-to-b from-blue-100 via-white to-blue-50 text-gray-900"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
